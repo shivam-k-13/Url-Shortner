@@ -28,13 +28,21 @@ A lightweight URL shortener built with **Node.js**, **Express**, **MongoDB**, an
 
 ### ➕ POST `/api/url/shorten`
 
-## ENTITY-RELATIONSHIP DIAGRAM
-+-----------------------------+
-|           url              |
-+-----------------------------+
-| _id : ObjectId              |
-| original_url : String       |
-| short_url : String (unique)|
-| createdAt : Date            |
-+-----------------------------+
+## MongoDB schema
 
++-------------------------------+
+|             url              |
++-------------------------------+
+| _id          : ObjectId       |
+| original_url : String         |
+| short_url    : String (unique)|
+| createdAt    : Date           |
++-------------------------------+
+
+
+## ER Diagram
++----------+           +----------+
+|  users   |           |  urls    |
++----------+           +----------+
+     | 1                  | *      
+     +------------------>+
